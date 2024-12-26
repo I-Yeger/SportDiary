@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group >
+        <item
+            android:title="Спорт"
+            android:id="@+id/sportListFragment"
+            android:icon="@drawable/ic_sport"/>
+        <item
+            android:title="Питание"
+            android:id="@+id/nutritionListFragment"
+            android:icon="@drawable/ic_food"/>
+        <item
+            android:title="Выйти"
+            android:id="@+id/logoutFragment"
+            android:icon="@drawable/ic_logout"/>
+    </group>
+
+</menu>

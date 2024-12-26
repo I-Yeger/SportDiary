@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_app"
+    app:startDestination="@id/sportListFragment">
+
+    <fragment
+        android:id="@+id/sportListFragment"
+        android:name="com.bsuir.sportdiary.app.screens.app.sport.list.SportListFragment"
+        android:label="Спорт"
+        tools:layout="@layout/fragment_sport_list">
+        <action
+            android:id="@+id/action_sportListFragment_to_sportAddFragment"
+            app:destination="@id/sportAddFragment" />
+        <action
+            android:id="@+id/action_sportListFragment_to_sportUpdateFragment"
+            app:destination="@id/sportUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nutritionListFragment"
+        android:name="com.bsuir.sportdiary.app.screens.app.nutrition.list.NutritionListFragment"
+        android:label="Питание"
+        tools:layout="@layout/fragment_nutrition_list">
+        <action
+            android:id="@+id/action_nutritionListFragment_to_nutritionAddFragment"
+            app:destination="@id/nutritionAddFragment" />
+        <action
+            android:id="@+id/action_nutritionListFragment_to_nutritionUpdateFragment"
+            app:destination="@id/nutritionUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="com.bsuir.sportdiary.app.screens.app.LogoutFragment"
+        android:label="Выход"
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/sportAddFragment"
+        android:name="com.bsuir.sportdiary.app.screens.app.sport.add.SportAddFragment"
+        android:label="Добавление тренировки"
+        tools:layout="@layout/fragment_sport_add" >
+        <action
+            android:id="@+id/action_sportAddFragment_to_sportListFragment"
+            app:destination="@id/sportListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportUpdateFragment"
+        android:name="com.bsuir.sportdiary.app.screens.app.sport.update.SportUpdateFragment"
+        android:label="Обновление тренировки"
+        tools:layout="@layout/fragment_sport_update">
+        <action
+            android:id="@+id/action_sportUpdateFragment_to_sportListFragment"
+            app:destination="@id/sportListFragment" />
+        <argument
+            android:name="currentSport"
+            app:argType="com.bsuir.sportdiary.app.model.Sport" />
+    </fragment>
+    <fragment
+        android:id="@+id/nutritionAddFragment"
+        android:name="com.bsuir.sportdiary.app.screens.app.nutrition.add.NutritionAddFragment"
+        android:label="Добавление приёма пищи"
+        tools:layout="@layout/fragment_nutrition_add">
+        <action
+            android:id="@+id/action_nutritionAddFragment_to_nutritionListFragment"
+            app:destination="@id/nutritionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nutritionUpdateFragment"
+        android:name="com.bsuir.sportdiary.app.screens.app.nutrition.update.NutritionUpdateFragment"
+        android:label="Обновление пирёма пищи"
+        tools:layout="@layout/fragment_nutrition_update">
+        <action
+            android:id="@+id/action_nutritionUpdateFragment_to_nutritionListFragment"
+            app:destination="@id/nutritionListFragment" />
+        <argument
+            android:name="currentNutrition"
+            app:argType="com.bsuir.sportdiary.app.model.Nutrition" />
+    </fragment>
+</navigation>
